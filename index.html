@@ -3,34 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barath R - Data Analyst Portfolio</title>
+    <title>Barath R - Data Analyst & Digital Marketing Professional</title>
+    
+    <!-- Modern CSS & Fonts -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="nav-container container">
             <div class="nav-logo">
                 <h3>Barath R</h3>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -42,42 +40,28 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Barath R</span>
-                    </h1>
-                    <h2 class="hero-subtitle">Data Analyst & Digital Marketing Professional</h2>
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">Barath R</span></h1>
+                    <h2 class="hero-subtitle"><span id="typed-text"></span></h2>
                     <p class="hero-description">
-                        Detail-oriented and analytical professional with 1+ year of experience in digital marketing 
-                        and currently working as a Data Analyst Intern. Passionate about transforming data into 
-                        actionable insights and driving organizational growth.
+                        A passionate professional bridging the gap between data and marketing. I specialize in transforming complex datasets into actionable insights that drive business growth and marketing success.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
                         <a href="Barath_R.pdf" class="btn btn-secondary" download>
-                            <i class="fas fa-download"></i> Resume
+                            <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-image">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                        <div class="profile-info">
-                            <h3>Barath R</h3>
-                            <p>Data Analyst</p>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/barathxo" target="_blank">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="mailto:barath.bhojan@gmail.com">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://www.linkedin.com/in/barathxo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:barath.bhojan@gmail.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
@@ -85,93 +69,45 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about fade-in">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
-                <div class="section-subtitle">Getting to know me</div>
+                <p class="section-subtitle">A brief introduction to my professional journey.</p>
             </div>
             <div class="about-content">
-                <div class="about-info">
-                    <div class="about-text">
-                        <p>
-                            I'm a passionate Data Analyst with expertise in digital marketing and analytics. 
-                            Currently working as a Data Analytics Intern at Unified Mentor, where I transform 
-                            large datasets into actionable insights using Python, Excel, and Power BI.
-                        </p>
-                        <p>
-                            My journey in data analytics is complemented by my strong background in digital 
-                            marketing, having worked as a Digital Marketing Analyst where I implemented SEO 
-                            best practices, managed Google Ads campaigns, and developed data-driven strategies.
-                        </p>
-                        <div class="about-details">
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>The Nilgiris, Tamil Nadu</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Bachelor of Computer Science & Technology</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-award"></i>
-                                <span>CGPA: 8.4</span>
-                            </div>
+                <div class="about-text">
+                    <p>
+                        I am a detail-oriented analyst with a dual passion for data and digital marketing. My experience at Unified Mentor and Preston Consulting has equipped me with a unique skill set, allowing me to not only derive insights from data but also to understand and apply them in a strategic marketing context.
+                    </p>
+                    <p>
+                        From optimizing SEO and managing Google Ads campaigns to building insightful Power BI dashboards, I thrive in roles that require both analytical rigor and creative problem-solving. I am committed to continuous learning and am actively seeking a full-time role where I can leverage my skills to make a significant impact.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>The Nilgiris, Tamil Nadu</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>B.Sc. Computer Science</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">1+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Technical Skills</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Experience</h2>
-                <div class="section-subtitle">My professional journey</div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2025 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Data Analytics Intern</h3>
-                        <h4>Unified Mentor</h4>
-                        <ul>
-                            <li>Collected, cleaned, and transformed large datasets using Microsoft Excel and Python (Pandas, NumPy) to derive actionable insights</li>
-                            <li>Designed and implemented dashboards using Power BI to visualize trends, KPIs, and business metrics</li>
-                            <li>Collaborated with team members to present findings through data storytelling and interactive visualizations</li>
-                            <li>Conducted detailed exploratory data analysis (EDA) to identify correlations, trends, and patterns</li>
-                            <li>Ensured data integrity by handling missing values, duplicates, and inconsistencies in large datasets</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">May 2024 - June 2025</div>
-                    <div class="timeline-content">
-                        <h3>Digital Marketing Analyst</h3>
-                        <h4>Preston Consulting and EdTech Pvt Ltd - Gostudy</h4>
-                        <ul>
-                            <li>Implemented SEO best practices to optimize website structure and enhance search engine discoverability</li>
-                            <li>Conducted comprehensive keyword research to identify relevant search terms and optimize content</li>
-                            <li>Applied SQL queries on leads datasets to segment prospects and identify high-converting channels</li>
-                            <li>Managed and optimized Google Ads campaigns to maximize ROI and drive qualified traffic</li>
-                            <li>Developed data-driven social media strategies, boosting brand awareness and engagement</li>
-                        </ul>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">1+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Key Skills</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,37 +115,36 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills fade-in">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="section-subtitle">Technical proficiencies</div>
+                <h2 class="section-title">Core Competencies</h2>
+                <p class="section-subtitle">The tools and technologies I use to deliver results.</p>
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Programming & Analytics</h3>
+                    <h3><i class="fas fa-chart-pie"></i> Data & Analytics</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python (Pandas, NumPy)</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Google Sheets</span>
+                        <span class="skill-tag">Excel & Google Sheets</span>
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">Power BI</span>
                         <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">EDA</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-bullhorn"></i> Digital Marketing</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">SEO (On-page, Off-page)</span>
-                        <span class="skill-tag">SEM (Google Ads, Bing Ads)</span>
+                        <span class="skill-tag">SEO (On/Off-Page)</span>
+                        <span class="skill-tag">SEM (Google/Bing Ads)</span>
                         <span class="skill-tag">Social Media Marketing</span>
                         <span class="skill-tag">Video Marketing</span>
                         <span class="skill-tag">Influencer Outreach</span>
-                        <span class="skill-tag">Brand Collaborations</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-chart-bar"></i> Web Analytics & PPC</h3>
+                    <h3><i class="fas fa-magnifying-glass-chart"></i> Web Analytics & PPC</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Google Analytics (GA4)</span>
                         <span class="skill-tag">Google Tag Manager</span>
@@ -218,21 +153,96 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="certifications">
-                <h3><i class="fas fa-certificate"></i> Certifications</h3>
-                <div class="cert-list">
-                    <div class="cert-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Ongoing Data Analytics Training (Python, SQL, Power BI)</span>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">My career timeline and key responsibilities.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Apr 2025 - Present</span>
+                        <h3>Data Analytics Intern</h3>
+                        <h4>Unified Mentor</h4>
+                        <ul>
+                            <li>Transformed large datasets into actionable insights using Excel and Python.</li>
+                            <li>Designed and implemented Power BI dashboards to visualize KPIs.</li>
+                            <li>Conducted exploratory data analysis (EDA) to identify trends and anomalies.</li>
+                        </ul>
                     </div>
-                    <div class="cert-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Google Analytics Certification</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">May 2024 - Jun 2025</span>
+                        <h3>Digital Marketing Analyst</h3>
+                        <h4>Preston Consulting and EdTech Pvt Ltd</h4>
+                        <ul>
+                            <li>Implemented SEO best practices, significantly increasing organic search visibility.</li>
+                            <li>Managed and optimized Google Ads campaigns to maximize ROI.</li>
+                            <li>Utilized SQL to segment leads and analyze campaign performance.</li>
+                        </ul>
                     </div>
-                    <div class="cert-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Google Ads Certification</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A selection of my work in data analysis and marketing.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image"><i class="fas fa-chart-line"></i></div>
+                    <div class="project-info">
+                        <h3>Sales Dashboard</h3>
+                        <p>An interactive Power BI dashboard visualizing sales data to identify top-performing products and regions.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View Project <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image"><i class="fas fa-search-dollar"></i></div>
+                    <div class="project-info">
+                        <h3>SEO Strategy Analysis</h3>
+                        <p>A comprehensive analysis of website SEO performance, including keyword ranking, backlink analysis, and content optimization recommendations.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">SEO</span>
+                            <span class="project-tag">Google Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View Analysis <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image"><i class="fab fa-python"></i></div>
+                    <div class="project-info">
+                        <h3>Customer Segmentation</h3>
+                        <p>A Python-based project using Pandas and Scikit-learn to segment customers based on purchasing behavior, enabling targeted marketing campaigns.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -240,49 +250,25 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact fade-in">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
-                <div class="section-subtitle">Let's work together</div>
+                <p class="section-subtitle">I'm open to new opportunities and collaborations.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:barath.bhojan@gmail.com">barath.bhojan@gmail.com</a>
-                        </div>
+                        <h4><i class="fas fa-envelope"></i> Email</h4>
+                        <p><a href="mailto:barath.bhojan@gmail.com">barath.bhojan@gmail.com</a></p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <a href="tel:+917448645076">+91 7448645076</a>
-                        </div>
+                        <h4><i class="fab fa-linkedin"></i> LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/barathxo" target="_blank">linkedin.com/in/barathxo</a></p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/barathxo" target="_blank">linkedin.com/in/barathxo</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <span>The Nilgiris, Tamil Nadu, India</span>
-                        </div>
+                        <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                        <p>The Nilgiris, Tamil Nadu, India</p>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -294,10 +280,7 @@
                             <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
@@ -310,15 +293,20 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Barath R. All rights reserved.</p>
+                <p>&copy; 2025 Barath R. All Rights Reserved.</p>
                 <div class="footer-links">
-                    <a href="mailto:barath.bhojan@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/barathxo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:barath.bhojan@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Typed.js for typing effect -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
 </body>
 </html>
