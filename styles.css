@@ -57,8 +57,12 @@ html {
     transition: var(--transition);
 }
 
+h1, h2, h3, .logo {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
@@ -299,6 +303,7 @@ header {
     animation: rotate 60s linear infinite;
     z-index: 1;
     opacity: 0.4;
+    pointer-events: none; /* <-- Add this line */
 }
 
 .hero-container {
@@ -313,8 +318,8 @@ header {
 }
 
 .hero-content {
-    flex: 1;
-    animation: fadeInUp 1s ease-out;
+    position: relative;
+    z-index: 2; /* Make sure it's above the background */
 }
 
 @keyframes fadeInUp {
