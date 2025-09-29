@@ -179,30 +179,29 @@ document.addEventListener('DOMContentLoaded', () => {
 // Add typing effect to hero title
 function typeWriter(element, text, speed = 100) {
     let i = 0;
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = text;
-    const plainText = tempDiv.textContent || tempDiv.innerText || '';
-    
     element.innerHTML = '';
     
     function type() {
-        if (i < plainText.length) {
-            if (plainText.charAt(i) === 'B' && plainText.substr(i, 8) === 'Barath R') {
-                // When we reach "Barath R", insert the HTML with highlight
-                const beforeText = plainText.substring(0, i);
-                const afterText = plainText.substring(i + 8);
-                element.innerHTML = beforeText + '<span class="highlight">Barath R</span>' + afterText.substring(0, 0);
-                i += 8;
+        if (i < text.length) {
+            if (text.charAt(i) === '<') {
+                // Handle HTML tags - find the complete tag
+                let tagEnd = text.indexOf('>', i);
+                if (tagEnd !== -1) {
+                    let tag = text.substring(i, tagEnd + 1);
+                    element.innerHTML += tag;
+                    i = tagEnd + 1;
+                } else {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                }
             } else {
-                element.innerHTML = element.innerHTML.replace('<span class="highlight">Barath R</span>', '') + plainText.charAt(i);
+                element.innerHTML += text.charAt(i);
                 i++;
             }
             setTimeout(type, speed);
-        } else {
-            // Ensure the final HTML structure is correct
-            element.innerHTML = text;
         }
     }
+    
     type();
 }
 
