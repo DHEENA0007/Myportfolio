@@ -207,11 +207,20 @@ function typeWriter(element, text, speed = 100) {
 
 // Initialize typing effect when page loads
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
+    const typedNameElement = document.getElementById('typed-name');
+    if (typedNameElement) {
         setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
+            typeWriter(typedNameElement, 'Barath R', 150, () => {
+                // Remove cursor blinking after typing is complete
+                typedNameElement.style.borderRight = 'none';
+                const cursor = typedNameElement.querySelector('.cursor');
+                if(cursor) {
+                    cursor.style.display = 'none';
+                }
+                 if (typedNameElement.classList.contains('typing')) {
+                    typedNameElement.classList.remove('typing');
+                }
+            });
         }, 500);
     }
 });

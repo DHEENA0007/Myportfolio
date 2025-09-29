@@ -125,8 +125,24 @@ body {
     color: var(--primary-color);
 }
 
+#typed-name::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
+    font-weight: 500;
     color: var(--text-light);
     margin-bottom: 1.5rem;
     font-weight: 400;
@@ -199,11 +215,13 @@ body {
 
 .profile-info h3 {
     font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
 }
 
 .profile-info p {
+    font-size: 1rem;
     color: var(--text-light);
     margin-bottom: 1.5rem;
 }
