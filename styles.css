@@ -55,8 +55,9 @@ body {
 }
 
 .nav-logo h3 {
-    color: var(--primary-color);
+    font-size: 1.5rem;
     font-weight: 700;
+    color: var(--primary-color);
 }
 
 .nav-menu {
@@ -115,8 +116,8 @@ body {
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
     color: var(--text-dark);
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
@@ -372,6 +373,18 @@ section {
     border-radius: 15px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.footer-content a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .timeline-content h3 {
