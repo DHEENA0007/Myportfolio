@@ -223,109 +223,348 @@ window.addEventListener('load', () => {
             });
         }, 500);
     }
+    
+    // Initialize advanced features
+    createParticleSystem();
+    createMatrixEffect();
+    createCodeBackground();
+    createGeometricShapes();
 });
 
-// Add scroll-to-top button
-function createScrollToTopButton() {
-    const button = document.createElement('button');
-    button.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    button.className = 'scroll-to-top';
-    button.style.cssText = `
+// Create particle system for hero section
+function createParticleSystem() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles-container';
+    hero.appendChild(particlesContainer);
+    
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 8) + 's';
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Create matrix rain effect for about section
+function createMatrixEffect() {
+    const about = document.querySelector('.about');
+    if (!about) return;
+    
+    const matrixBg = document.createElement('div');
+    matrixBg.className = 'matrix-bg';
+    about.appendChild(matrixBg);
+    
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+    
+    for (let i = 0; i < 20; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        column.style.left = Math.random() * 100 + '%';
+        column.style.animationDelay = Math.random() * 8 + 's';
+        column.style.animationDuration = (Math.random() * 4 + 8) + 's';
+        
+        let columnText = '';
+        for (let j = 0; j < 30; j++) {
+            columnText += characters.charAt(Math.floor(Math.random() * characters.length)) + '\n';
+        }
+        column.textContent = columnText;
+        
+        matrixBg.appendChild(column);
+    }
+}
+
+// Create floating tech icons
+function createFloatingIcons() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    const iconsContainer = document.createElement('div');
+    iconsContainer.className = 'floating-elements';
+    
+    const techIcons = [
+        'fas fa-database',
+        'fas fa-chart-line',
+        'fab fa-python',
+        'fas fa-code',
+        'fas fa-brain',
+        'fas fa-robot',
+        'fas fa-network-wired',
+        'fas fa-microchip'
+    ];
+    
+    techIcons.forEach((icon, index) => {
+        const iconElement = document.createElement('i');
+        iconElement.className = `${icon} floating-icon`;
+        iconElement.style.left = Math.random() * 100 + '%';
+        iconElement.style.top = Math.random() * 100 + '%';
+        iconElement.style.animationDelay = Math.random() * 8 + 's';
+        iconsContainer.appendChild(iconElement);
+    });
+    
+    hero.appendChild(iconsContainer);
+}
+
+// Create data stream visualization
+function createDataStream() {
+    const about = document.querySelector('.about');
+    if (!about) return;
+    
+    setInterval(() => {
+        const stream = document.createElement('div');
+        stream.className = 'data-stream';
+        stream.style.left = Math.random() * 100 + '%';
+        stream.style.animationDelay = '0s';
+        about.appendChild(stream);
+        
+        setTimeout(() => {
+            stream.remove();
+        }, 2000);
+    }, 1000);
+}
+
+// Terminal-like console effect
+function createConsoleEffect() {
+    const consoleContainer = document.createElement('div');
+    consoleContainer.style.cssText = `
         position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        transition: all 0.3s ease;
+        top: 100px;
+        right: 20px;
+        width: 300px;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        color: #00ff00;
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        padding: 10px;
+        z-index: 1001;
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--primary-color);
         opacity: 0;
-        transform: translateY(20px);
-        z-index: 1000;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
     `;
     
-    button.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+    const consoleText = document.createElement('div');
+    consoleText.innerHTML = `
+        <div style="color: #00ff00;">$ analyzing portfolio data...</div>
+        <div style="color: #ffff00;">Loading skills: Python ████████ 95%</div>
+        <div style="color: #ffff00;">Loading skills: SQL ███████ 90%</div>
+        <div style="color: #ffff00;">Loading skills: Power BI ██████ 88%</div>
+        <div style="color: #00ff00;">✓ Portfolio loaded successfully</div>
+        <div style="color: #00ffff;">Ready for connections...</div>
+    `;
     
-    // Show/hide button based on scroll position
+    consoleContainer.appendChild(consoleText);
+    document.body.appendChild(consoleContainer);
+    
+    // Show console on scroll
+    let consoleShown = false;
     window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            button.style.opacity = '1';
-            button.style.transform = 'translateY(0)';
-        } else {
-            button.style.opacity = '0';
-            button.style.transform = 'translateY(20px)';
+        if (window.scrollY > 300 && !consoleShown) {
+            consoleContainer.style.opacity = '1';
+            consoleShown = true;
+            
+            setTimeout(() => {
+                consoleContainer.style.opacity = '0';
+                setTimeout(() => {
+                    consoleContainer.remove();
+                }, 300);
+            }, 5000);
         }
     });
-    
-    document.body.appendChild(button);
 }
 
-// Initialize scroll-to-top button
-createScrollToTopButton();
-
-// Add hover effects to skill tags
-document.addEventListener('DOMContentLoaded', () => {
+// Interactive skill bars with animation
+function createInteractiveSkillBars() {
     const skillTags = document.querySelectorAll('.skill-tag');
+    
     skillTags.forEach(tag => {
-        tag.addEventListener('mouseenter', () => {
-            tag.style.transform = 'scale(1.05)';
-            tag.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+        tag.addEventListener('click', () => {
+            // Create skill proficiency popup
+            const popup = document.createElement('div');
+            popup.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 2rem;
+                border-radius: 15px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+                z-index: 1002;
+                max-width: 300px;
+                text-align: center;
+                border: 2px solid var(--primary-color);
+            `;
+            
+            const skillName = tag.textContent;
+            const proficiency = Math.floor(Math.random() * 20) + 80; // Random 80-100%
+            
+            popup.innerHTML = `
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${skillName}</h3>
+                <div style="background: #f0f0f0; border-radius: 10px; height: 20px; overflow: hidden; margin-bottom: 1rem;">
+                    <div style="background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); height: 100%; width: ${proficiency}%; transition: width 1s ease; border-radius: 10px;"></div>
+                </div>
+                <p style="color: var(--text-light);">Proficiency: ${proficiency}%</p>
+                <button onclick="this.parentElement.remove()" style="background: var(--primary-color); color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; margin-top: 1rem;">Close</button>
+            `;
+            
+            document.body.appendChild(popup);
+            
+            // Auto close after 3 seconds
+            setTimeout(() => {
+                if (popup.parentElement) {
+                    popup.remove();
+                }
+            }, 3000);
+        });
+    });
+}
+
+// Network connection visualization
+function createNetworkVisualization() {
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0.1;
+    `;
+    
+    document.body.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    const particles = [];
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    
+    // Create particles
+    for (let i = 0; i < 50; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
+            size: Math.random() * 2 + 1
+        });
+    }
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach(particle => {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            
+            if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+            if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+            
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.fillStyle = '#2563eb';
+            ctx.fill();
         });
         
-        tag.addEventListener('mouseleave', () => {
-            tag.style.transform = 'scale(1)';
-            tag.style.boxShadow = 'none';
-        });
-    });
-});
-
-// Add counter animation for stats
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    function updateCounter() {
-        start += increment;
-        if (start < target) {
-            element.textContent = Math.ceil(start) + '+';
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target + '+';
+        // Draw connections
+        ctx.strokeStyle = '#2563eb';
+        ctx.lineWidth = 0.5;
+        
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
         }
+        
+        requestAnimationFrame(animate);
     }
     
-    updateCounter();
+    animate();
 }
 
-// Initialize counter animations when stats section is visible
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.textContent);
-                if (!isNaN(target)) {
-                    animateCounter(stat, target);
-                }
-            });
-            statsObserver.unobserve(entry.target);
+// Enhanced typing effect with more realistic coding simulation
+function enhancedTypeWriter(element, text, speed = 100, callback) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            // Add character with slight randomization for more natural feel
+            const char = text.charAt(i);
+            element.innerHTML += char;
+            i++;
+            
+            // Vary speed slightly for more natural typing
+            const randomSpeed = speed + (Math.random() - 0.5) * 50;
+            setTimeout(type, Math.max(randomSpeed, 20));
+        } else if (callback) {
+            callback();
         }
-    });
+    }
+    
+    // Add initial cursor
+    element.style.borderRight = '2px solid var(--primary-color)';
+    type();
+}
+
+// Initialize all advanced features
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        initMouseTracking();
+        initParallaxEffect();
+        initCursorTrail();
+        enhanceMatrixEffect();
+        createDataVisualization();
+    }, 1000);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const aboutSection = document.querySelector('.about');
-    if (aboutSection) {
-        statsObserver.observe(aboutSection);
+// Update the main initialization
+window.addEventListener('load', () => {
+    const typedNameElement = document.getElementById('typed-name');
+    if (typedNameElement) {
+        setTimeout(() => {
+            enhancedTypeWriter(typedNameElement, 'Barath R', 150, () => {
+                // Remove cursor blinking after typing is complete
+                typedNameElement.style.borderRight = 'none';
+            });
+        }, 500);
     }
+    
+    // Initialize all advanced features
+    createParticleSystem();
+    createMatrixEffect();
+    createCodeBackground();
+    createGeometricShapes();
+    createFloatingIcons();
+    createDataStream();
+    createConsoleEffect();
+    createNetworkVisualization();
+    
+    setTimeout(() => {
+        createInteractiveSkillBars();
+    }, 2000);
 });
