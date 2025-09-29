@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Particles.js for interactive background -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
     <header>
@@ -19,9 +21,13 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -33,19 +39,33 @@
 
     <main>
         <section id="hero" class="hero">
+            <div id="particles-js"></div>
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1>Hi, I'm <span class="highlight">Barath R</span></h1>
-                    <h2>Data Analyst & Digital Marketing Professional</h2>
+                    <div class="hero-greeting">👋 Hello, World!</div>
+                    <h1>I'm <span class="highlight">Barath R</span></h1>
+                    <div class="typewriter">
+                        <span id="typewriter-text"></span><span class="cursor">|</span>
+                    </div>
                     <p class="hero-summary">Detail-oriented and analytical professional with 1+ year of experience in digital marketing and currently working as a Data Analyst Intern. Proficient in SEO, Google Ads, and social media marketing, with hands-on experience in data analysis using Excel, Python, and Tableau.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="Barath_R.pdf" class="btn btn-secondary" download>Download Resume</a>
+                        <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get In Touch</a>
+                        <a href="Barath_R.pdf" class="btn btn-secondary" download><i class="fas fa-file-download"></i> Download Resume</a>
+                    </div>
+                    <div class="social-links hero-social">
+                        <a href="https://www.linkedin.com/in/barathxo" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:barath.bhojan@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+917448645076" class="social-icon"><i class="fas fa-phone"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="profile-placeholder">
                         <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="hero-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
                     </div>
                 </div>
             </div>
@@ -75,8 +95,23 @@
                     <div class="about-details">
                         <h3>Education</h3>
                         <p><strong>Bachelor of Computer Science and Technology</strong><br>SNS College of Engineering (2020 - 2024)<br>Cumulative GPA: 8.4</p>
+                        
+                        <h3>Connect with Me</h3>
+                        <div class="about-social-links">
+                            <a href="https://www.linkedin.com/in/barathxo" target="_blank" class="about-social-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="mailto:barath.bhojan@gmail.com" class="about-social-link">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                            <a href="tel:+917448645076" class="about-social-link">
+                                <i class="fas fa-phone"></i> +91 7448645076
+                            </a>
+                        </div>
+                        
                         <h3>Languages</h3>
                         <p>English, Tamil, Kannada</p>
+                        
                         <h3>Soft Skills</h3>
                         <ul>
                             <li>High adaptability with a strong commitment to continuous learning</li>
@@ -125,48 +160,160 @@
             </div>
         </section>
 
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-image-placeholder">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sales Data Analysis</h3>
+                            <p>Created interactive dashboards using Power BI to analyze sales performance across regions, identifying key trends and opportunities for growth.</p>
+                            <div class="project-tags">
+                                <span>Power BI</span>
+                                <span>DAX</span>
+                                <span>Data Visualization</span>
+                            </div>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-image-placeholder">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Customer Segmentation</h3>
+                            <p>Utilized Python and scikit-learn to segment customers based on purchasing behavior, enabling targeted marketing strategies.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Scikit-learn</span>
+                            </div>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-image-placeholder">
+                                <i class="fas fa-search-dollar"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Marketing ROI Analysis</h3>
+                            <p>Analyzed campaign performance data to calculate ROI for different marketing channels and optimized budget allocation.</p>
+                            <div class="project-tags">
+                                <span>Excel</span>
+                                <span>SQL</span>
+                                <span>Google Analytics</span>
+                            </div>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="skills" class="skills">
             <div class="container">
                 <h2 class="section-title">Skills & Certifications</h2>
                 <div class="skills-content">
-                    <div class="skills-category">
-                        <h3>Programming & Analytics</h3>
-                        <div class="skill-tags">
-                            <span>Python (Pandas, NumPy)</span>
-                            <span>Excel</span>
-                            <span>Google Sheets</span>
-                            <span>SQL</span>
-                            <span>Power BI</span>
-                            <span>Tableau</span>
+                    <div class="skills-column">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-progress-container">
+                            <div class="skill-progress">
+                                <div class="skill-name">Python (Pandas, NumPy)</div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-name">SQL</div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-name">Power BI</div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-name">Excel</div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-name">Tableau</div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar" data-width="75%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skills-category">
+                    
+                    <div class="skills-column">
                         <h3>Digital Marketing</h3>
-                        <div class="skill-tags">
-                            <span>SEO (On-page, Off-page)</span>
-                            <span>SEM (Google Ads, Bing Ads)</span>
-                            <span>Social Media Marketing (Meta, LinkedIn)</span>
-                            <span>Video Marketing (YouTube Ads)</span>
-                            <span>Influencer Outreach</span>
-                            <span>Brand Collaborations</span>
+                        <div class="skill-cards">
+                            <div class="skill-card">
+                                <div class="skill-card-icon"><i class="fas fa-search"></i></div>
+                                <div class="skill-card-content">
+                                    <h4>SEO</h4>
+                                    <p>On-page & Off-page Optimization</p>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-card-icon"><i class="fas fa-ad"></i></div>
+                                <div class="skill-card-content">
+                                    <h4>SEM</h4>
+                                    <p>Google Ads & Bing Ads</p>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-card-icon"><i class="fas fa-share-alt"></i></div>
+                                <div class="skill-card-content">
+                                    <h4>Social Media</h4>
+                                    <p>Meta, LinkedIn & Content Strategy</p>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-card-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="skill-card-content">
+                                    <h4>Analytics</h4>
+                                    <p>GA4, GTM & Campaign Tracking</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skills-category">
-                        <h3>Web Analytics & PPC</h3>
-                        <div class="skill-tags">
-                            <span>Google Analytics (GA4)</span>
-                            <span>Google Tag Manager</span>
-                            <span>Keyword Research</span>
-                            <span>PPC Campaign Optimization</span>
-                        </div>
-                    </div>
+                    
                     <div class="certifications">
-                        <h3>Certifications</h3>
-                        <ul>
-                            <li>Ongoing Data Analytics Training (Python, SQL, Power BI)</li>
-                            <li>Google Analytics Certification</li>
-                            <li>Google Ads Certification</li>
-                        </ul>
+                        <h3>Certifications & Achievements</h3>
+                        <div class="certification-cards">
+                            <div class="certification-card">
+                                <i class="fas fa-certificate"></i>
+                                <h4>Data Analytics Training</h4>
+                                <p>Python, SQL, Power BI (Ongoing)</p>
+                            </div>
+                            <div class="certification-card">
+                                <i class="fas fa-award"></i>
+                                <h4>Google Analytics</h4>
+                                <p>Certified Professional</p>
+                            </div>
+                            <div class="certification-card">
+                                <i class="fas fa-trophy"></i>
+                                <h4>Google Ads</h4>
+                                <p>Certified Specialist</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -175,53 +322,83 @@
         <section id="contact" class="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:barath.bhojan@gmail.com">barath.bhojan@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <a href="tel:+917448645076">+91 7448645076</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <h4>LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/barathxo" target="_blank">linkedin.com/in/barathxo</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>The Nilgiris, TN</p>
-                            </div>
+                <div class="contact-wrapper">
+                    <div class="contact-header">
+                        <p class="contact-description">Feel free to reach out for opportunities, collaborations, or just to say hello!</p>
+                        <div class="contact-cta">
+                            <a href="mailto:barath.bhojan@gmail.com" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i> Send Me an Email
+                            </a>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <form action="mailto:barath.bhojan@gmail.com" method="post" enctype="text/plain">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:barath.bhojan@gmail.com">barath.bhojan@gmail.com</a>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required>
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <a href="tel:+917448645076">+91 7448645076</a>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="subject" placeholder="Subject" required>
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/barathxo" target="_blank">linkedin.com/in/barathxo</a>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <div class="contact-card">
+                                <div class="contact-card-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>The Nilgiris, TN</p>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
+                        </div>
+                        
+                        <div class="contact-form-container">
+                            <div class="form-header">
+                                <h3>Send a Message</h3>
+                                <p>I'll get back to you as soon as possible</p>
+                            </div>
+                            <form action="mailto:barath.bhojan@gmail.com" method="post" enctype="text/plain" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-submit">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,9 +410,16 @@
             <p>&copy; 2025 Barath R. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/barathxo" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/barathxo" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/barathxo" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:barath@example.com" target="_blank"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
